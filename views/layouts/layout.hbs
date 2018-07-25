@@ -9,8 +9,8 @@
         <title>{{result.kb_title}}</title>
         <meta property="og:title" content="{{result.kb_title}}" />
       {{else}}
-        <title>{{title}}</title>
-        <meta property="og:title" content="{{title}}" />
+        <title>{{config.settings.website_title}}</title>
+        <meta property="og:title" content="{{config.settings.website_title}}" />
       {{/if}}
     {{/if}}
     <meta charset="utf-8">
@@ -102,7 +102,7 @@
             <span class="icon-bar"></span>
           </button>
             {{#ifCond config.settings.show_website_logo '===' true}}
-              <a class="navbar-brand brand-image" href="{{app_context}}/"><img src="{{app_context}}/static/logo.png" width="140"></a>
+              <a class="navbar-brand brand-image" style="padding-top: 0;" href="{{app_context}}/"><img src="{{app_context}}/static/logo.png" style="height: 60px;"></a>
             {{else}}
                 {{#ifCond config.settings.website_title '===' 'openKB'}}
                   <a class="navbar-brand brand-image" href="{{app_context}}/"><img src="{{app_context}}/static/logo.png" width="140"></a>
@@ -167,12 +167,6 @@
     <input type="hidden" value="{{app_context}}" id="app_context">
     <input type="hidden" value="{{config.settings.links_blank_page}}" id="blank_links">
     <div id="notify_message"></div>
-    {{#if show_footer}}
-      <footer class="footer">
-        <div class="container">
-          <p class="text-muted">{{__ "Powered by"}} <a href="http://openkb.mrvautin.com/" target="_blank">openKB</a></p>
-        </div>
-      </footer>
-    {{/if}}
+
   </body>
 </html>
